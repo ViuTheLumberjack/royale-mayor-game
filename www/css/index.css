@@ -9,10 +9,13 @@ body{
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    
     display: block;
     
-    width: 100%;
+    width: 80%;
     height: auto;
+    max-height: 800px;
+    overflow-y: hidden;
     
 }
     
@@ -28,14 +31,15 @@ body{
 #myImage
 {
  position: relative;
- width: 100% ;
+ width: auto ;
+ height: auto;
  margin: 0 auto;
 }
 
 #italian
 {
     position: absolute;
-    left: 95%;
+    left: 85%;
     top: 10px;
     z-index: 1;
 }
@@ -43,15 +47,25 @@ body{
 #english
 {
     position: absolute;
-    left: 90%;
+    left: 80%;
     top: 10px;
     z-index: 1;
 }
 
+button
+{
+    width: 5%;
+    height: auto;
+}
 
 
-
-
+#language
+{
+    position: relative;
+    display: block; 
+    width: auto;
+    height: auto;
+}
 
 
 
