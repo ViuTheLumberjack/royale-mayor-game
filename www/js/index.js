@@ -1,6 +1,6 @@
 var root = "img/";
-var italianImage = "italian";
-var englishImage = "english";
+var ITALIAN_IMAGE = "italian";
+var ENGLISH_IMAGE = "english";
 var currentImage = "italian";
 var extension = ".jpg";
 
@@ -8,7 +8,7 @@ var pageNum = 0;
 
 function toItalian(){
     
-    currentImage = italianImage;
+    currentImage = ITALIAN_IMAGE;
     document.getElementById("image").src = root + currentImage + pageNum + extension;
     console.log(currentImage + pageNum + extension);
 }
@@ -16,22 +16,28 @@ function toItalian(){
 function toEnglish(){
     
     alert("In Sviluppo");
+    
 }
 
 function changeImage() {
 
     switch (pageNum) {
-        case 0:
+        case 0: 
             pageNum++;
             document.getElementById("image").src = root + currentImage + pageNum + extension;
             break;
-
         case 1:
+            
             pageNum++;
             document.getElementById("image").src = root + currentImage + pageNum + extension;
             document.getElementById("confirm").innerHTML = "Inizio";
-            document.getElementById("confirm").onclick = "nextPage()";
             break;
+
+        case 2:
+
+            document.getElementById("confirm").onclick = nextPage();
+            break;
+        
     }
 
 }
@@ -39,5 +45,6 @@ function changeImage() {
 function nextPage(){
     
     window.open("caricamento.html");
+    window.close();
     
 }
