@@ -11,16 +11,16 @@ body{
     margin-bottom: 20px;
     display: block;
     
-    width: 800px;
+    width: 100%;
     height: auto;
     
 }
     
-button
+#confirm
 {
     position: absolute;
-    left: 410px;
-    top: 550px;
+    left: 50%;
+    bottom: 50px;
     z-index: 1;
 }
 
@@ -28,14 +28,14 @@ button
 #myImage
 {
  position: relative;
- width: 800px ;
+ width: 100% ;
  margin: 0 auto;
 }
 
 #italian
 {
     position: absolute;
-    left: 660px;
+    left: 95%;
     top: 10px;
     z-index: 1;
 }
@@ -43,7 +43,7 @@ button
 #english
 {
     position: absolute;
-    left: 600px;
+    left: 90%;
     top: 10px;
     z-index: 1;
 }
