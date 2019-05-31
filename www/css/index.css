@@ -8,11 +8,12 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    margin-bottom: 20px;
     display: block;
     
-    width: auto;
+    width: 800px;
     height: auto;
-    max-width: 400px;
+    
 }
     
 #button
@@ -27,7 +28,7 @@ body{
 #myImage
 {
  position: relative;
- width: 1000px;
+ width: 800px ;
  margin: 0 auto;
 }
 
