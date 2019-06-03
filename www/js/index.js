@@ -6,17 +6,14 @@ var extension = ".jpg";
 
 var pageNum = 0;
 
-function toItalian(){
-    
+function toItalian(){   
     currentImage = ITALIAN_IMAGE;
     document.getElementById("image").src = root + currentImage + pageNum + extension;
-    console.log(currentImage + pageNum + extension);
 }
 
 function toEnglish(){
-    
-    alert("In Sviluppo");
-    
+    currentImage = ENGLISH_IMAGE;
+    document.getElementById("image").src = root + currentImage + pageNum + extension;
 }
 
 function changeImage() {
