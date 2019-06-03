@@ -30,13 +30,13 @@ function changeImage() {
             
             pageNum++;
             document.getElementById("image").src = root + currentImage + pageNum + extension;
-            document.getElementById("confirm").innerHTML = "Inizio";
+            document.getElementById("confirm").innerHTML = "<img src=\"img/inizia.png\" id=\"iniziaIMG\">";
             break;
 
         case 2:
 
             document.getElementById("confirm").onclick = nextPage();
-            document.getElementById("confirm").id = "prova";
+            document.getElementById("confirm").id = "start";
             break;
         
     }
