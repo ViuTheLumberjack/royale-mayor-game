@@ -31,7 +31,6 @@ body{
     border: none !important;
 }
 
-
 #myImage
 {
  position: relative;
@@ -73,7 +72,6 @@ button
     height: auto;
 }
 
-
 #language
 {
     position: relative;
@@ -105,8 +103,6 @@ button
     width: 280%;
     height: auto;
 }
-
-
 
 
 
