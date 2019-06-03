@@ -3,22 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-const urlParams = new URLSearchParams(window.location.search);
-const language = urlParams.get('language');
+//const urlParams = new URLSearchParams(window.location.search);
+//const language = urlParams.get('language');
 
-var slider = document.getElementById("PIPPO");
-var output = document.getElementById("numGruppi");
-output.innerHTML = slider.value;
+var rangeslider = document.getElementById("sliderRange");
+var output = document.getElementById("demo");
+output.innerHTML = rangeslider.value;
 
-
-slider.oninput = function() {
+rangeslider.oninput = function() {
   output.innerHTML = this.value;
 };
 
-setTitle();
-output.innerHTML = slider.value;
-displayText();
-generateForms();
+//var output = document.getElementById("numGruppi");
+
+//setTitle();
+//displayText();
+//generateForms();
 
 function setTitle(){
     
