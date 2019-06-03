@@ -30,7 +30,7 @@ function changeImage() {
             
             pageNum++;
             document.getElementById("image").src = root + currentImage + pageNum + extension;
-            document.getElementById("confirm").innerHTML = "<img src=\"img/inizia.png\" id=\"iniziaIMG\">";
+            document.getElementById("confirm").innerHTML = "<img src=\"img/inizia.PNG\" id=\"iniziaIMG\">";
             break;
 
         case 2:
