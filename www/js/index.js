@@ -36,6 +36,7 @@ function changeImage() {
         case 2:
 
             document.getElementById("confirm").onclick = nextPage();
+            document.getElementById("confirm").id = "prova";
             break;
         
     }
