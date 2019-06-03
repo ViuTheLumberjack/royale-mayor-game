@@ -45,7 +45,7 @@ function changeImage() {
 
 function nextPage(){
     
-    window.open("caricamento.html");
+    window.open("caricadati.html" + "?language=" + currentImage);
     window.close();
     
 }
