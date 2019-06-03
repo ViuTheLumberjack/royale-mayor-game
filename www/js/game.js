@@ -8,7 +8,7 @@
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
-output.innerHTML = slider.value;
+document.getElementById("demo").innerHTML = document.getElementById("myRange").value;
 
 slider.oninput = function() {
   output.innerHTML = this.value;
