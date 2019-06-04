@@ -2,6 +2,11 @@ body{
     background-color:#f6f6f6;
 }
 
+.body2
+{
+    background-image: url("sfondo.jpg");
+}
+
 #image
 {
     position: relative;
