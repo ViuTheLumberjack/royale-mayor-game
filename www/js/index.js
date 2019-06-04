@@ -6,16 +6,22 @@ var extension = ".jpg";
 
 var pageNum = 0;
 
-function toItalian(){   
+function toItalian() {
     currentImage = ITALIAN_IMAGE;
     document.getElementById("image").src = root + currentImage + pageNum + extension;
-    document.getElementById("confirm").innerHTML = "<img src=\"img/avanti.png\" class=\"avantiIMG\">";
+    if (pageNum === 2)
+        document.getElementById("confirm").innerHTML = "<img src=\"img/inizia.PNG\" class=\"avantiIMG\">";
+    else
+        document.getElementById("confirm").innerHTML = "<img src=\"img/avanti.png\" class=\"avantiIMG\">";
 }
 
-function toEnglish(){
+function toEnglish() {
     currentImage = ENGLISH_IMAGE;
     document.getElementById("image").src = root + currentImage + pageNum + extension;
-    document.getElementById("confirm").innerHTML = "<img src=\"img/next.png\" class=\"avantiIMG\">";
+    if (pageNum === 2)
+        document.getElementById("confirm").innerHTML = "<img src=\"img/start.png\" class=\"avantiIMG\">";
+    else
+        document.getElementById("confirm").innerHTML = "<img src=\"img/next.png\" class=\"avantiIMG\">";
 }
 
 function changeImage() {
@@ -29,7 +35,9 @@ function changeImage() {
             
             pageNum++;
             document.getElementById("image").src = root + currentImage + pageNum + extension;
+            if (currentImage === ITALIAN_IMAGE)
             document.getElementById("confirm").innerHTML = "<img src=\"img/inizia.PNG\" class=\"iniziaIMG\">";
+            else document.getElementById("confirm").innerHTML = "<img src=\"img/start.png\" class=\"iniziaIMG\">";
             break;
 
         case 2:
