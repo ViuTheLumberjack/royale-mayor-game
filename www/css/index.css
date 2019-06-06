@@ -7,7 +7,7 @@ body{
     background-image: url("sfondo.jpg");
 }
 
-#image
+.sfondo
 {
     position: relative;
     margin-left: auto;
@@ -19,8 +19,10 @@ body{
     
     width: 100%;
     height: auto;
-    max-height: 800px;
+    max-height: 780px;
     overflow-y: hidden;
+    
+    z-index: -1;
     
 }
     

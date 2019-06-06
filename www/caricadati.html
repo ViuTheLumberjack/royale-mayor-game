@@ -10,15 +10,19 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/slider.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/caricadati.css">
     </head>
     
     <body>
-        <div class="slidecontainer"> 
-            <input type="range" min="1" max="100" value="10"
-                   class="slider" id="sliderRange"> 
-            <p>Value: <span id="demo"> 10 </span></p> 
-        </div>
         
+        <p class="testo"><b>NUMERO GRUPPI: </b><span id="demo">2</span></p>
+        <div class="slidecontainer">
+            <input type="range" min="2" max="6" value="2"
+                   class="slider" id="sliderRange"> 
+        </div>
+        <img src="img/template.jpg" class="sfondo">
+
         
         <script src="js/game.js"></script>
     </body>
