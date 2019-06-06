@@ -14,7 +14,18 @@ and open the template in the editor.
     width: auto;
     margin-left: 25%;
     height: 150px;
-    margin-top: 10%;
+    margin-top: 8%;
     z-index: 1;
+    color: #002566;
+}
+
+.NomeG
+{
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    height: 150px;
+    margin-left: 25%;
+    margin-top: 12%;
     color: #002566;
 }
