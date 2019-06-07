@@ -57,10 +57,33 @@ and open the template in the editor.
 {
     position: absolute;
     z-index: 1;
-    width: auto;
-    height: auto;
-    margin-left: 25%;
+    width: 60%;
+    height: 3%;
+    
+    margin-left: 15%;
     margin-top: 11%;
+}
+
+.form2
+{
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 3%;
+    
+    margin-left: 15%;
+    margin-top: 15%;
+}
+
+.form3
+{
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 3%;
+    
+    margin-left: 15%;
+    margin-top: 19%;
 }
 
 .smallB
@@ -69,21 +92,21 @@ and open the template in the editor.
     z-index: 1;
     width: auto;
     height: auto;
-    margin-left: 45%;
-    margin-top: 11%;
+    margin-left: 53%;
+    margin-top: -2%;
     background: transparent;
     border: none !important;
 }
 
 .mediumB
 {
-        position: absolute;
+    position: absolute;
     z-index: 1;
     width: auto;
     height: auto;
-    margin-left: 60%;
-    margin-top: 11%;
-    ùbackground: transparent;
+    margin-left: 78%;
+    margin-top: -2%;
+    background: transparent;
     border: none !important;
 }
 
@@ -93,8 +116,8 @@ and open the template in the editor.
     z-index: 1;
     width: auto;
     height: auto;
-    margin-left: 75%;
-    margin-top: 11%;
+    margin-left: 103%;
+    margin-top: -2%;
     background: transparent;
     border: none !important;
 }
@@ -103,15 +126,15 @@ and open the template in the editor.
 {
     position: absolute;
     z-index: 1;
+    margin-bottom: 3%;
     width: auto;
     height: auto;
-    margin-left: 25%;
-    margin-top: 11%;
+    margin-left: 15%;
 }
 
 .icon
 {
-   width: auto;
+   width: 400%;
    height: auto;
    position: absolute;
    
