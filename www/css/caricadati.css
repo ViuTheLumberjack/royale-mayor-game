@@ -95,8 +95,7 @@ and open the template in the editor.
     height: auto;
     margin-left: 75%;
     margin-top: 11%;
-    background: transparent;
-    border: none !important;
+
 }
 
 .nomeG
@@ -107,4 +106,12 @@ and open the template in the editor.
     height: auto;
     margin-left: 25%;
     margin-top: 11%;
+}
+
+.icon
+{
+   width: 10%;
+   height: auto;
+   position: absolute;
+   
 }
