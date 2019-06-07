@@ -18,7 +18,7 @@ and open the template in the editor.
 .slider {
   -webkit-appearance: none;
   transform: rotate(-270deg) translateY(50%);
-  width: 100%;
+  width: 90%;
   height: 10px;
   background: #d3d3d3;
   outline: none;
@@ -53,4 +53,16 @@ and open the template in the editor.
   background: #002566;
   cursor: pointer;
   z-index: 1;
+}
+
+.slider::-selection
+{
+    background: #002566;
+}
+
+.icon
+{
+   width: 10%;
+   height: auto;
+   position: relative;
 }

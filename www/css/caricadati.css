@@ -19,13 +19,92 @@ and open the template in the editor.
     color: #002566;
 }
 
-.NomeG
+
+.CittaG
 {
     position: absolute;
     z-index: 1;
     width: auto;
     height: 150px;
-    margin-left: 25%;
-    margin-top: 12%;
+    margin-left: 75%;
+    margin-top: 8%;
     color: #002566;
+}
+
+.CittaM
+{
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    height: 150px;
+    margin-left: 60%;
+    margin-top: 8%;
+    color: #002566;
+}
+
+.CittaP
+{
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    height: 150px;
+    margin-left: 45%;
+    margin-top: 8%;
+    color: #002566;
+}
+
+.form1
+{
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    height: auto;
+    margin-left: 25%;
+    margin-top: 11%;
+}
+
+.smallB
+{
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    height: auto;
+    margin-left: 45%;
+    margin-top: 11%;
+    background: transparent;
+    border: none !important;
+}
+
+.mediumB
+{
+        position: absolute;
+    z-index: 1;
+    width: auto;
+    height: auto;
+    margin-left: 60%;
+    margin-top: 11%;
+    ùbackground: transparent;
+    border: none !important;
+}
+
+.bigB
+{
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    height: auto;
+    margin-left: 75%;
+    margin-top: 11%;
+    background: transparent;
+    border: none !important;
+}
+
+.nomeG
+{
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    height: auto;
+    margin-left: 25%;
+    margin-top: 11%;
 }
