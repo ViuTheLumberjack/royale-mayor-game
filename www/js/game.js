@@ -32,3 +32,24 @@ function displayText(){
     
     
 }
+
+function sendAlert()
+{
+    alert("Selezione Bloccata")
+}
+
+function setImageS()
+{
+    
+}
+
+function setImageM()
+{
+    
+}
+
+function setImageB()
+{
+    
+}
+

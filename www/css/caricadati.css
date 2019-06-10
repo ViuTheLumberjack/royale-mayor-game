@@ -86,6 +86,65 @@ and open the template in the editor.
     margin-top: 19%;
 }
 
+.form4
+{
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 3%;
+    
+    margin-left: 15%;
+    margin-top: 24%;
+}
+
+
+.form5
+{
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 3%;
+    
+    margin-left: 15%;
+    margin-top: 28%;
+}
+
+
+.form6
+{
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 3%;
+    
+    margin-left: 15%;
+    margin-top: 33%;
+}
+
+
+.form7
+{
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 3%;
+    
+    margin-left: 15%;
+    margin-top: 37%;
+}
+
+
+.form8
+{
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 3%;
+    
+    margin-left: 15%;
+    margin-top: 42%;
+}
+
 .smallB
 {
     position: absolute;
