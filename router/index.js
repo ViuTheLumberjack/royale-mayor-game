@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Istruzioni from '../components/views/Istruzioni.vue'
+import Istruzioni from '../components/Istruzioni.vue'
+import Header from '../components/Header.vue'
 
 Vue.use(Router)
 
@@ -10,6 +11,11 @@ export default new Router({
       path: '/',
       name: 'Istruzioni',
       component: Istruzioni
+    },
+    {
+      path: '/',
+      name: 'Header',
+      component: Header
     }
   ]
 })
