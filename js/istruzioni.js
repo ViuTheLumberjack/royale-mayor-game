@@ -1,6 +1,7 @@
 import '../css/index.css'
 import Vue from 'vue'
-import Istruzioni from '../views/Istruzioni'
+import Istruzioni from '../components/Istruzioni'
+
 var root = "../../assets/";
 var ITALIAN_IMAGE = "italian";
 var ENGLISH_IMAGE = "english";

@@ -13,7 +13,7 @@ export default new Router({
       component: Istruzioni
     },
     {
-      path: '/',
+      path: '/header',
       name: 'Header',
       component: Header
     }

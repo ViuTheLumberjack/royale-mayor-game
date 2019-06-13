@@ -5,7 +5,7 @@
     </div>
 </template>
 
-<script >
+<script src="../js/istruzioni.js">
 export default {
   name: 'HelloWorld'
 }
