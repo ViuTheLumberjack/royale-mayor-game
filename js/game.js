@@ -1,8 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 //const urlParams = new URLSearchParams(window.location.search);
 //const language = urlParams.get('language');
 
@@ -19,16 +14,3 @@ rangeslider.oninput = function() {
 //setTitle();
 //displayText();
 //generateForms();
-
-function setTitle(){
-    
-    if(language === "italian") window.document.title = 'Gioco del Sindaco';
-    else window.document.title = "Mayor's Game";
-    
-}
-
-function displayText(){
-    
-    
-    
-}

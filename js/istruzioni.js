@@ -2,18 +2,17 @@
 import Vue from 'vue'
 import Istruzioni from '../components/Istruzioni'
 
-var root = "../../assets/";
-var ITALIAN_IMAGE = "italian";
-var ENGLISH_IMAGE = "english";
-var currentImage = "italian";
-var extension = ".jpg";
-var pageNum = 0;
-
 new Vue({
     el: '#myImage',
     data: {
         italianButton: true,
-        englishButton: false
+        englishButton: false,
+        root: "../../assets/",
+        ITALIAN_IMAGE: "italian",
+        ENGLISH_IMAGE: "english",
+        currentImage : "italian",
+        extension: ".jpg",
+        pageNum: 0,
     },
     methods:{
         toItalian: function () {

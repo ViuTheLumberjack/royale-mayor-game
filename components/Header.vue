@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id = "head">
         <img src='../assets/bordo.png' class="bordo">
         <p> {{ title }} </p>
         <nav>
@@ -9,7 +9,7 @@
     </div>
 </template>
 
-<script>
+<script src="../js/header.js">
 export default {
     name: 'Header'
 }
