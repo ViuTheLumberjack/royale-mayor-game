@@ -21,7 +21,7 @@
 {
     position: absolute;
     left: 43%;
-    bottom:15px;
+    bottom:1.5%;
     z-index: 1;
     width: 5%;
     height: 5%;
@@ -37,12 +37,6 @@
  margin: 0 auto;
 }
 
-.ButtonIMG
-{
-    width: 100%;
-    height: auto;
-}
-
 button
 {
     width: 5%;
@@ -51,7 +45,7 @@ button
 
 .avantiIMG
 {
-    width: 200%;
+    width: 350%;
     height: auto;
 }
 
@@ -69,7 +63,7 @@ button
 
 .iniziaIMG
 {
-    width: 200%;
+    width: 350%;
     height: auto;
 }
 
