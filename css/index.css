@@ -1,19 +1,11 @@
-body{
-    background-color:#f6f6f6;
-}
-
-.body2
-{
-    background-image: url("sfondo.jpg");
-}
 
 .sfondo
 {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: -20%;
+    margin-bottom: 0px;
     
     display: block;
     
@@ -58,19 +50,9 @@ button
     height: auto;
 }
 
-/* ok */
-
-#language
-{
-    position: relative;
-    display: block; 
-    width: auto;
-    height: auto;
-}
-
 .avantiIMG
 {
-    width: 290%;
+    width: 200%;
     height: auto;
 }
 
@@ -88,7 +70,7 @@ button
 
 .iniziaIMG
 {
-    width: 280%;
+    width: 200%;
     height: auto;
 }
 
