@@ -1,4 +1,4 @@
-import '../css/index.css'
+// import '../css/index.css'
 import Vue from 'vue'
 import Istruzioni from '../components/Istruzioni'
 
@@ -10,10 +10,10 @@ var extension = ".jpg";
 var pageNum = 0;
 
 new Vue({
-    el= '#myImage',
+    el: '#myImage',
     data: {
-        italianButton = true,
-        englishButton = false
+        italianButton: true,
+        englishButton: false
     },
     methods:{
         toItalian: function () {
