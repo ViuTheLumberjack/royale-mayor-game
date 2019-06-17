@@ -10,3 +10,5 @@ export default {
   name: 'HelloWorld'
 }
 </script>
+<style src="../css/index.css">
+</style>
