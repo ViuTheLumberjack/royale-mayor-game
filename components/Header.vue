@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img src='../assets/bordo.png'/>
+        <img src='../assets/bordo.png' class="bordo">
         <p> {{ title }} </p>
         <nav>
             <button id="italian" @click="toItalian" :disabled="italianButton"><img src="../assets/IT.png" class="ButtonIMG"></button>
@@ -14,3 +14,5 @@ export default {
     name: 'Header'
 }
 </script>
+<style src="../css/Header.css">
+</style>
