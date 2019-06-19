@@ -1,21 +1,30 @@
 import Vue from 'vue'
-new Vue ({
+import Header from '../components/Header.vue'
+
+var vm = new Vue ({
 
     el: '#head',
     data: {        
-        title: "Gioco del Sindaco" 
+        italianButton: true,
+        englishButton: false,
+        root: "../../assets/",
+        ITALIAN_IMAGE: "italian",
+        ENGLISH_IMAGE: "english",
+        currentImage : "italian",
+        extension: ".jpg",
+        pageNum: 0,
     },
-    methods: {    
-        setTitle: function (){
-            
-            if(language === "italian") window.document.title = 'Gioco del Sindaco';
-            else window.document.title = "Mayor's Game";
-            
+    computed: {    
+        toItalian: function () {
+            console.log(ITALIAN_IMAGE);
+            this.italianButton = false;
+            this.englishButton = true;
         },
 
-        displayText: function (){ 
-            
+        toEnglish: function () {
+            console.log(ENGLISH_IMAGE);
+            this.italianButton = true;
+            this.englishButton = false;
         },
-
     }
 })

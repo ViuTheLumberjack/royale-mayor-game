@@ -7,8 +7,9 @@
 
 <script src="../js/istruzioni.js">
 export default {
-  name: 'HelloWorld'
+  name: 'Istruzioni'
 }
 </script>
+
 <style src="../css/index.css">
 </style>
