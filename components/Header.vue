@@ -8,11 +8,38 @@
     </div>
 </template>
 
-<script src="../js/header.js">
+<script>
+/*    var italianButton  true,
+            englishButton: false,
+            root: "../../assets/",*/
+    var        ITALIAN_IMAGE= "italian";
+    var        ENGLISH_IMAGE= "english";
+/*            currentImage : "italian",
+            extension: ".jpg",
+            pageNum: 0,*/
+
 export default {
-    name: 'Header'
+    name: 'Header',
+    data() {
+        
+        return{       
+            
+    }
+    },
+    methods: {    
+        toItalian: function () {
+            console.log(ITALIAN_IMAGE);
+            this.italianButton = false;
+            this.englishButton = true;
+        },
+
+        toEnglish: function () {
+            console.log(ENGLISH_IMAGE);
+            this.italianButton = true;
+            this.englishButton = false;
+        },
+    }
 }
-/* test */
 </script>
 <style src="../css/Header.css">
 </style>
