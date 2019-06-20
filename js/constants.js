@@ -1,4 +1,4 @@
-const image_info = {
+const image = {
     root: "../assets/",
     ITALIAN_IMAGE: "italian",
     ENGLISH_IMAGE: "english",
@@ -6,4 +6,4 @@ const image_info = {
     extension: ".jpg",
 }
 
-export var imageName = image_info;
+export var image_info = image;
