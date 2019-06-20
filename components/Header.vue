@@ -41,5 +41,4 @@
 
 </script>
 
-<style src="../css/Header.css">
-</style>
+<style src="../css/Header.css"></style>
