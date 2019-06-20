@@ -10,38 +10,32 @@
 
 <script>
 
-    import { imageName } from '../js/constants'
+    import { image_info } from '../js/constants'
     var italianButton = true;
     var englishButton = false;
-    /*         root: "../../assets/",
-    
-           currentImage : "italian",
-            extension: ".jpg",
-            pageNum: 0,*/
+    var currentLanguage = image_info.ITALIAN_IMAGE;
 
-export default {
-    name: 'Header',
-    data() {
-        
-        return{  
-            italianButton,
-            englishButton    
-    }
-    },
-    methods: {    
-        toItalian: function () {
-            console.log(imageName.ITALIAN_IMAGE);
-            this.italianButton = true;
-            this.englishButton = false;
+    export default {
+        name: 'Header',
+        data() {
+            return{  
+                currentLanguage,    
+            }
         },
+        methods: {    
+            toItalian: function () {
+                console.log(image_info.ITALIAN_IMAGE);
+                this.italianButton = true;
+                this.englishButton = false;
+            },
 
-        toEnglish: function () {
-            console.log(imageName.ENGLISH_IMAGE);
-            this.italianButton = false;
-            this.englishButton = true;
-        },
+            toEnglish: function () {
+                console.log(image_info.ENGLISH_IMAGE);
+                this.italianButton = false;
+                this.englishButton = true;
+            },
+        }
     }
-}
 
 </script>
 
