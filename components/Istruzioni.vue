@@ -5,9 +5,15 @@
     </div>
 </template>
 
-<script src="../js/istruzioni.js">
+<script>
 export default {
-  name: 'Istruzioni'
+  name: 'Istruzioni',
+  data() {
+
+  },
+  methods:{
+    
+  }
 }
 </script>
 

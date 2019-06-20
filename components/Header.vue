@@ -9,12 +9,13 @@
 </template>
 
 <script>
-/*    var italianButton  true,
-            englishButton: false,
-            root: "../../assets/",*/
-    var        ITALIAN_IMAGE= "italian";
-    var        ENGLISH_IMAGE= "english";
-/*            currentImage : "italian",
+
+    import { imageName } from '../js/constants'
+    var italianButton = true;
+    var englishButton = false;
+    /*         root: "../../assets/",
+    
+           currentImage : "italian",
             extension: ".jpg",
             pageNum: 0,*/
 
@@ -22,24 +23,27 @@ export default {
     name: 'Header',
     data() {
         
-        return{       
-            
+        return{  
+            italianButton,
+            englishButton    
     }
     },
     methods: {    
         toItalian: function () {
-            console.log(ITALIAN_IMAGE);
-            this.italianButton = false;
-            this.englishButton = true;
-        },
-
-        toEnglish: function () {
-            console.log(ENGLISH_IMAGE);
+            console.log(imageName.ITALIAN_IMAGE);
             this.italianButton = true;
             this.englishButton = false;
         },
+
+        toEnglish: function () {
+            console.log(imageName.ENGLISH_IMAGE);
+            this.italianButton = false;
+            this.englishButton = true;
+        },
     }
 }
+
 </script>
+
 <style src="../css/Header.css">
 </style>
