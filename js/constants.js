@@ -1,5 +1,5 @@
 const image = {
-    root: "../assets/",
+    root: "../../src/assets/",
     ITALIAN_IMAGE: "italian",
     ENGLISH_IMAGE: "english",
     currentImage : "italian",
