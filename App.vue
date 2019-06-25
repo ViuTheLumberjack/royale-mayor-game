@@ -2,7 +2,7 @@
   <div id="app" >
     <Header/>
     <Istruzioni/>
-    <router-view/>
+    <!-- <router-view/> -->
   </div>
 </template>
 
