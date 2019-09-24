@@ -15,7 +15,7 @@
   var button = '<button id = "confirm" v-on:click.prevent="changeImage"><img v-bind:src="' + button_image +'" class="avantiIMG" alt="bottone"></button>';
   var pageNum = 0;
   var currentImage = Header.data().currentLanguage;
-  // var img_source = it_images.italian0;
+  var img_source = it_images.italian0;
 
   export default {
     name: 'Istruzioni',
@@ -25,7 +25,7 @@
         button,
         pageNum,
         currentImage,
-        // img_source,
+        img_source
       }
     },
     
@@ -35,19 +35,19 @@
               switch (pageNum) {
                   case 0: 
                       pageNum++;
-                      // img_source = it_images.italian1;
+                      document.getElementById("image").src = it_images.italian1;
                       
                       break;
 
                   case 1:
                       
                       pageNum++;
-                      // img_source = it_images.italian2;
-                      /*if (currentImage === image_info.ITALIAN_IMAGE)
+                      document.getElementById("image").src = it_images.italian2;
+                      /* if (currentImage === image_info.ITALIAN_IMAGE)
                       button_image = ;
-                      else button_image = ;*/
+                      else button_image = ; */
 
-                       // image_class = "iniziaIMG";
+                      var image_class = "iniziaIMG";
                       break;
           
                   case 2:
