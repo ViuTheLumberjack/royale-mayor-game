@@ -32,4 +32,3 @@
 </template>
 <style src="../css/caricadati.css"></style>
 <style src="../css/index.css"></style>
-<style src="../css/slider.css"></style>
