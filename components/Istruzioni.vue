@@ -2,7 +2,7 @@
     <div id="myImage">
       <!-- <img v-bind:src = "getImage()" alt = "pagina" id="image" class="sfondo"> -->
 
-      <md-card-media>
+      
       <!-- swiper -->
       <swiper :options="swiperOption">
         <swiper-slide><img v-bind:src = "getImage(0)" alt = "pagina" id="image" class="sfondo"></swiper-slide>
@@ -13,8 +13,7 @@
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
-    </md-card-media>
-
+   
       <button id="confirm" v-on:click.prevent = "changeImage"><img v-bind:src = "button_image" class="avantiIMG" alt="bottone"></button>
       <!-- <span v-html="button"/> -->
     </div>
