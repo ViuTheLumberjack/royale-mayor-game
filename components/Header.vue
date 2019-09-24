@@ -26,15 +26,17 @@
         },
         methods: {    
             toItalian() {
-                console.log(image_info.ITALIAN_IMAGE);
                 this.italianButton = true;
                 this.englishButton = false;
+                currentLanguage = image_info.ITALIAN_IMAGE;
+                console.log(currentLanguage);
             },
 
             toEnglish() {
-                console.log(image_info.ENGLISH_IMAGE);
                 this.italianButton = false;
                 this.englishButton = true;
+                currentLanguage = image_info.ENGLISH_IMAGE;
+                console.log(currentLanguage);
             },
         }
     }

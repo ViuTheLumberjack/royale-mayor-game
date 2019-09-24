@@ -1,6 +1,20 @@
 <template>
     <div id="myImage">
-      <img v-bind:src = "getImage()" alt = "pagina" id="image" class="sfondo">
+      <!-- <img v-bind:src = "getImage()" alt = "pagina" id="image" class="sfondo"> -->
+
+      <md-card-media>
+      <!-- swiper -->
+      <swiper :options="swiperOption">
+        <swiper-slide><img v-bind:src = "getImage(0)" alt = "pagina" id="image" class="sfondo"></swiper-slide>
+        <swiper-slide><img v-bind:src = "getImage(1)" alt = "pagina" id="image" class="sfondo"></swiper-slide>
+        <swiper-slide><img v-bind:src = "getImage(2)" alt = "pagina" id="image" class="sfondo"></swiper-slide>
+
+        <div class="swiper-pagination" slot="pagination"></div>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+      </swiper>
+    </md-card-media>
+
       <button id="confirm" v-on:click.prevent = "changeImage"><img v-bind:src = "button_image" class="avantiIMG" alt="bottone"></button>
       <!-- <span v-html="button"/> -->
     </div>
@@ -10,6 +24,9 @@
   // import { image_info } from '../js/constants'
   import Header from './Header'
   import { it_images } from "../assets/istruzioni/index.js"
+  import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
   var button_image = it_images.avanti;
   var button = '<button id = "confirm" v-on:click.prevent="changeImage"><img v-bind:src="' + button_image +'" class="avantiIMG" alt="bottone"></button>';
@@ -25,8 +42,22 @@
         button,
         pageNum,
         currentImage,
-        img_source
+        img_source,
+        swiperOption: {
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar'
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        }
       }
+    },
+    components: {
+    swiper,
+    swiperSlide
     },
     
     methods:{
@@ -47,7 +78,7 @@
                       button_image = ;
                       else button_image = ; */
 
-                      var image_class = "iniziaIMG";
+                      image_class = "iniziaIMG";
                       break;
           
                   case 2:
@@ -61,10 +92,10 @@
               }
           
           },
-      getImage(){
+      getImage(number){
         var img_source;
 
-        switch (pageNum) {
+        switch (number) {
                   case 0: 
                       
                       img_source = it_images.italian0;
