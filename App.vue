@@ -8,11 +8,9 @@
 
 <script>
 // import Header from './components/Header.vue'
-import Istruzioni from './components/Istruzioni.vue'
-
+import Vue from 'vue'
 
 export default {
-  name: 'App',
-  components: { /* Header, */ Istruzioni}
+  name: 'App'
 }
 </script>

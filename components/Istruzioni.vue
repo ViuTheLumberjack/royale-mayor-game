@@ -2,7 +2,7 @@
     <div id="myImage">
 
       <!-- swiper -->
-      <swiper :options="swiperOption" @reachEnd = "activateButton" class="swiffer">
+      <swiper :options="swiperOption" v-on:reachEnd = "activateButton" class="swiffer">
         <swiper-slide><img v-bind:src = "getImage(0)" alt = "pagina" id="image"></swiper-slide>
         <swiper-slide><img v-bind:src = "getImage(1)" alt = "pagina" id="image"></swiper-slide>
         <swiper-slide><img v-bind:src = "getImage(2)" alt = "pagina" id="image"></swiper-slide>
@@ -12,7 +12,7 @@
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
 
-      <router-link to = "/Selezione" ><img v-bind:src = "getImage(3)" class="iniziaIMG" alt="bottone"></router-link>
+      <router-link to = "/Game" ><img v-bind:src = "getImage(3)" class="iniziaIMG" alt="bottone"></router-link>
     </div>
 </template>
 
