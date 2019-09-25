@@ -12,7 +12,7 @@
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
 
-      <button id="start" :disabled = "clickable" v-on:click.prevent="nextPage()"><img v-bind:src = "getImage(3)" class="iniziaIMG" alt="bottone"></button>
+      <button id="start"  :disabled = "disabled" v-on:click.prevent="nextPage"><img v-bind:src = "getImage(3)" class="iniziaIMG" alt="bottone"></button>
     </div>
 </template>
 
@@ -24,7 +24,7 @@
   import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
   var button_image = it_images.inizia;
-  var clickable = false;
+  var disabled = true;
   var currentLanguage = Header.data().currentLanguage;
   var img_source = it_images.italian0;
 
@@ -81,7 +81,7 @@
         return img_source;
       },
       activateButton(){
-        clickable = true;
+        disabled = false;
       },
       nextPage(){
         console.log("Next Page");
