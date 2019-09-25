@@ -3,29 +3,29 @@
 
       <!-- swiper -->
       <swiper :options="swiperOption" @reachEnd = "activateButton">
-        <swiper-slide><img v-bind:src = "getImage(0)" alt = "pagina" id="image" class="sfondo"></swiper-slide>
-        <swiper-slide><img v-bind:src = "getImage(1)" alt = "pagina" id="image" class="sfondo"></swiper-slide>
-        <swiper-slide><img v-bind:src = "getImage(2)" alt = "pagina" id="image" class="sfondo"></swiper-slide>
+        <swiper-slide><img v-bind:src = "getImage(0)" alt = "pagina" id="image"></swiper-slide>
+        <swiper-slide><img v-bind:src = "getImage(1)" alt = "pagina" id="image"></swiper-slide>
+        <swiper-slide><img v-bind:src = "getImage(2)" alt = "pagina" id="image"></swiper-slide>
 
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
 
-      <button id="start"  :disabled = "disabled" v-on:click.prevent="nextPage"><img v-bind:src = "getImage(3)" class="iniziaIMG" alt="bottone"></button>
+      <router-link to = "/Selezione" ><img v-bind:src = "getImage(3)" class="iniziaIMG" alt="bottone"></router-link>
     </div>
 </template>
 
 <script>
   // import { image_info } from '../js/constants'
-  import Header from './Header'
+  // import Header from './Header'
   import { it_images } from "../assets/istruzioni/index.js"
   import 'swiper/dist/css/swiper.css'
   import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
   var button_image = it_images.inizia;
   var disabled = true;
-  var currentLanguage = Header.data().currentLanguage;
+  // var currentLanguage = Header.data().currentLanguage;
   var img_source = it_images.italian0;
 
   export default {
