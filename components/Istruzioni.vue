@@ -2,7 +2,7 @@
     <div id="myImage">
 
       <!-- swiper -->
-      <swiper :options="swiperOption" @reachEnd = "activateButton">
+      <swiper :options="swiperOption" @reachEnd = "activateButton" class="swiffer">
         <swiper-slide><img v-bind:src = "getImage(0)" alt = "pagina" id="image"></swiper-slide>
         <swiper-slide><img v-bind:src = "getImage(1)" alt = "pagina" id="image"></swiper-slide>
         <swiper-slide><img v-bind:src = "getImage(2)" alt = "pagina" id="image"></swiper-slide>
