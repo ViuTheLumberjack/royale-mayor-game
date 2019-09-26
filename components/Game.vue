@@ -4,13 +4,14 @@
         <span> Probabilita' precipitazioni: {{ probabilita }} % </span>
         <span> Vuoi assicurarti ? </span>
         <tr v-for = "(t, index) in teams" :key = "t">
-            <img v-if = "t === 'big'" :src = "getImage(0)">
-                <!-- Inserisci -->
-            <img v-else-if = "t === 'medium'" :src = "getImage(1)">
+            <img v-if = "t === 'big'" :src = "getImage(index)" >
             
-            <img v-else :src = "getImage(2)">
+            <img v-else-if = "t === 'medium'" :src = "getImage(index)">
+            
+            <img v-else :src = "getImage(index)">
+            <span> {{ t }} </span>
 
-            <input type = "checkbox"> 
+            <input :id = "index" type = "checkbox" @click = "save(index)"> 
 
             <!-- 
             <button id = "yes" :disabled = "clicked" v-on:click = "confirmChoice(this.id, index)"> Si </button>
@@ -18,7 +19,7 @@
             -->
         </tr>
         
-        <router-link :to = "{ name: 'Results', params: {teams : teams, roundResults: risultati, turn: turno } }"> <button @click = "save"> NoN </button> </router-link> 
+        <router-link :to = "{ name: 'Results', params: {teams : teams, roundResults: risultati, turn: turno } }"> <button> NoN </button> </router-link> 
 
     </div>
 </template>
@@ -28,8 +29,10 @@
 import { it_cities } from '../assets/selezione/index.js'
 
 
+
 export default {
     name: "Game",
+    props: [  ],
     data(){
         return{
             teams: [
@@ -39,10 +42,10 @@ export default {
             ],
             turn: 1,
             probabilita: Math.floor(Math.random() * 100),
-            clicked: false,
             index: 0,
-            risultati: []
+            risultati: [teams.size()],
         }
+        
     },
     methods: {
         getImage(number){
@@ -55,18 +58,15 @@ export default {
                     return it_cities.small;
             }
         },
-        confirmChoice(id, index){
-            if(id === "yes") risultati[index][turn] = 'Y';
-            else risultati[index][turn] = 'N';
-            clicked = true;
-        }, 
-        save(){
+        save(index){
             
-        }
+            
+            this.risultati[index][this.turn] = 'Y';
+            
+                // clicked = true;
+            
+        },
+        
     }
 }
 </script>
-
-<style>
-
-</style>
