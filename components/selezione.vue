@@ -2,13 +2,13 @@
 <template>
     <div id="selezione">
         <div class="slidecontainer">
-            <input type="range" min="3" max="8" v-bind:value="defaultGroup"
+            <input type="range" min="3" max="8" :value="groupNumber"
                    class="slider" id="sliderRange"> 
         </div>
 
-        <tr v-for = "(i) in groupNumber" :key = "i">
+        <tr v-for = "i in groupNumber" :key = "i">
             <input v-model="message" placeholder="edit me">
-            <label>Message is: {{ message }}</label>
+            
         </tr>
 
         <input type = "button" @click="updateNumber">
@@ -18,14 +18,11 @@
 
 <script>
 
-var defaultGroup = 5;
-var groupNumber = 0;
-
 export default {
     name: "Selezione",
     data(){
         return{
-            groupNumber: 5,
+            groupNumber: 3, 
             
         }
     },
@@ -33,7 +30,6 @@ export default {
         updateNumber(){
             groupNumber = document.getElementById("sliderRange").value;
             console.log(groupNumber);
-            //this.groupNumber += 1;
         }
     }
     

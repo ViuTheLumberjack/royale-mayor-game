@@ -3,8 +3,8 @@ const cities_it = {
     bigL: require("./bigL.png"),
     bigS: require("./bigS.png"),
     medium: require("./medium.png"),
-    medium: require("./mediumL.png"),
-    medium: require("./mediumS.png"),
+    mediumL: require("./mediumL.png"),
+    mediumS: require("./mediumS.png"),
     small: require("./small.png"),
     smallL: require("./smallL.png"),
     smallS: require("./smallS.png")
