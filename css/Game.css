@@ -1,0 +1,161 @@
+.body
+{
+    background-color: antiquewhite;
+}
+
+.image
+{
+    position: static;
+    margin-top: 3%;
+    margin-left: 20%;
+    width: 30%;
+    float: left;
+    align-content: left;
+    height: auto;
+    margin: auto;
+    z-index: -1;
+}
+
+.image1
+{
+    position: static;
+    margin-top: 3%;
+    margin-left: 20%;
+    align-content: center;
+    width: 30%;
+    float: left;
+    height: auto;
+    margin: auto;
+    z-index: -1;
+}
+
+.image2
+{
+    position: static;
+    margin-top: 3%;
+    margin-left: 20%;
+    align-content: right;
+    width: 30%;
+    float: left;
+    height: auto;
+    margin: auto;
+    z-index: -1;
+}
+
+.container {
+    display: block;
+    position: absolute;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    background-color: rgb(233, 67, 67);
+    content: "X";
+    color: grey;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: rgb(121, 241, 121);
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: rgb(15, 192, 15);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 13px;
+    top: 5px;
+    width: 8px;
+    height: 25px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .button 
+  {
+
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    position: relative;
+  }
+
+  .turno
+  {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+    margin-left: 35%;
+  }
+
+  .probabilita
+  {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+    margin-left: 33%;
+  }
+
+  .assicuri
+  {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+    margin-left: 35%;
+  }
+
+  /*
+  .testo
+  {
+    border: 2px solid lightseagreen;
+    padding: 20px;
+    margin-left: 75%;
+  }
+  */

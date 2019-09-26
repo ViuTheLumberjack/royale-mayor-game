@@ -1,24 +1,27 @@
 <template>
     <div>
-        <span> Turno {{ turn }} </span>
-        <span> Probabilita' precipitazioni: {{ probabilita }} % </span>
-        <span> Vuoi assicurarti ? </span>
-        <tr v-for = "(t, index) in teams" :key = "t">
-            <img v-if = "t === 'big'" :src = "getImage(0)">
+        <div class="testo">
+            <h1 class="turno"> Turno {{ turn }} </h1>
+            <h1 class="probabilita">Probabilita' precipitazioni: {{ probabilita }} % </h1>
+            <h1 class="assicuri"> cliccare la casella della rispettiva citta' per assicurarsi </h1>
+        </div>
+        <tr v-for = "(t) in teams" :key = "t">
+            <img v-if = "t === 'big'" :src = "getImage(0)" class="image">
                 <!-- Inserisci -->
-            <img v-else-if = "t === 'medium'" :src = "getImage(1)">
+            <img v-else-if = "t === 'medium'" :src = "getImage(1)" class="image1">
             
-            <img v-else :src = "getImage(2)">
-
-            <input type = "checkbox"> 
-
+            <img v-else :src = "getImage(2)" class="image2">
+            <label class="container">
+                <input type = "checkbox"> 
+                <span class="checkmark"></span>
+            </label>
             <!-- 
             <button id = "yes" :disabled = "clicked" v-on:click = "confirmChoice(this.id, index)"> Si </button>
             <button id = "no" :disabled = "clicked" v-on = "confirmChoice(this.id, index)"> No </button>
             -->
         </tr>
         
-        <router-link :to = "{ name: 'Results', params: {teams : teams, roundResults: risultati, turn: turno } }"> <button @click = "save"> NoN </button> </router-link> 
+        <router-link :to = "{ name: 'Results', params: {teams : teams, roundResults: risultati, turn: turno } }"> <button @click = "save" class="button"> Avanti </button> </router-link> 
 
     </div>
 </template>
@@ -67,6 +70,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style src="../css/Game.css"></style>
