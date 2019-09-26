@@ -12,7 +12,7 @@
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
 
-      <router-link to = "/Selezione" ><img v-bind:src = "getImage(3)" class="iniziaIMG" alt="bottone"></router-link>
+      <router-link to = "/Game" ><img v-bind:src = "getImage(3)" class="iniziaIMG" alt="bottone"></router-link>
     </div>
 </template>
 
