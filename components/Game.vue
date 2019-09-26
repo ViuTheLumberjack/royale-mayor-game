@@ -45,7 +45,7 @@ export default {
             turn: 1,
             probabilita: Math.floor(Math.random() * 100),
             index: 0,
-            risultati: [teams.size()],
+            risultati: [],
         }
         
     },
