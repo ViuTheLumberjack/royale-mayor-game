@@ -22,7 +22,7 @@
             -->
         </tr>
         
-        <!-- <router-link :to = "{ name: 'Results', params: {teams : teams, roundResults: risultati, turn: turno } }"> --> <button @click = "save" class="button"> Avanti </button> 
+        <router-link :to = "{name: 'Results', params: {teams : teams, risultati: risultati, turn: turn, evento: event } }"> <button @click = "save" class="button"> Fine Round </button> </router-link>
 
     </div>
 </template>
@@ -33,7 +33,7 @@ import { it_cities } from '../assets/selezione/index.js'
 
 export default {
     name: "Game",
-    props: [  ],
+    props: [ ],
     data(){
         return{
             teams: [
@@ -41,10 +41,11 @@ export default {
                 "medium",
                 "small"
             ],
-            turn: 1,
             probabilita: Math.floor(Math.random() * 100),
             index: 0,
-            risultati: new Array(10).fill(new Array(8)),
+            risultati: Array.from(Array(8), () => new Array(10)), // team x turn
+            event: false,
+            turn: 1,
         }
         
     },
@@ -63,18 +64,28 @@ export default {
             
             for(var index in this.teams){
                 // eslint-disable-next-line
-                console.log(document.getElementById(index).checked);
-            
-                this.risultati[index][this.turn - 1] = document.getElementById(index).checked;
-
-                console.log(this.risultati);
+                //console.log(document.getElementById(index).checked);
+                if(this.$route.params.turn === undefined){
+                    this.risultati[index][0] = document.getElementById(index).checked;
+                } else {
+                    this.risultati[index][this.$route.params.turn - 1] = document.getElementById(index).checked;
+                }
                 
             }
-          
-                // clicked = true;
+
+            var app = Math.floor(Math.random() * 100)
+            if(app <= this.probabilita) this.event = true;
+            else this.event = false;
             
-        },
-        
+        }
+    },
+    created: function(){
+        if(this.$route.params.turn === undefined){
+            this.turn = 1;
+        } else {
+            this.turn = this.$route.params.turn;
+            this.risultati = this.$route.params.risultati;
+        }
     }
 }
 </script>
