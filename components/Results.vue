@@ -5,16 +5,17 @@
         
         <span v-if = "$route.params.evento === true"> Ha nevicato </span>
         <span v-else> Non ha nevicato </span>
-
+        <!-- Rimetti Index -->
         <tr v-for = "(t, index) in $route.params.teams" :key = "t">
             <img v-if = "t === 'big'" :src = "getImage(0)" class="image">
-                <!-- Inserisci -->
+                
             <img v-else-if = "t === 'medium'" :src = "getImage(1)" class="image1">
             
             <img v-else :src = "getImage(2)" class="image2">
             <label class="container">
-                {{ t }}   
-            <span> {{ calculate(index) }}</span>
+                {{ t }}  
+                <!-- finisci calculate --> 
+            <span> {{  $route.params.risultati[index][turn - 1]  }}  </span>
             </label>
         </tr>
 
