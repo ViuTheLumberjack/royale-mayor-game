@@ -5,14 +5,15 @@
             <h1 class="probabilita">Probabilita' precipitazioni: {{ probabilita }} % </h1>
             <h1 class="assicuri"> cliccare la casella della rispettiva citta' per assicurarsi </h1>
         </div>
-        <tr v-for = "(t) in teams" :key = "t">
+        <tr v-for = "(t, index) in teams" :key = "t">
             <img v-if = "t === 'big'" :src = "getImage(0)" class="image">
                 <!-- Inserisci -->
             <img v-else-if = "t === 'medium'" :src = "getImage(1)" class="image1">
             
             <img v-else :src = "getImage(2)" class="image2">
             <label class="container">
-                <input type = "checkbox"> 
+                {{ t }}
+                <input type = "checkbox" :id = "index"> 
                 <span class="checkmark"></span>
             </label>
             <!-- 
@@ -21,7 +22,7 @@
             -->
         </tr>
         
-        <router-link :to = "{ name: 'Results', params: {teams : teams, roundResults: risultati, turn: turno } }"> <button @click = "save" class="button"> Avanti </button> </router-link> 
+        <!-- <router-link :to = "{ name: 'Results', params: {teams : teams, roundResults: risultati, turn: turno } }"> --> <button @click = "save" class="button"> Avanti </button> 
 
     </div>
 </template>
@@ -29,8 +30,6 @@
 <script>
 
 import { it_cities } from '../assets/selezione/index.js'
-
-
 
 export default {
     name: "Game",
@@ -45,7 +44,7 @@ export default {
             turn: 1,
             probabilita: Math.floor(Math.random() * 100),
             index: 0,
-            risultati: [teams.size()],
+            risultati: new Array(10).fill(new Array(8)),
         }
         
     },
@@ -60,11 +59,18 @@ export default {
                     return it_cities.small;
             }
         },
-        save(index){
+        save(){
             
+            for(var index in this.teams){
+                // eslint-disable-next-line
+                console.log(document.getElementById(index).checked);
             
-            this.risultati[index][this.turn] = 'Y';
-            
+                this.risultati[index][this.turn - 1] = document.getElementById(index).checked;
+
+                console.log(this.risultati);
+                
+            }
+          
                 // clicked = true;
             
         },
