@@ -3,7 +3,7 @@
         <span v-if = "$route.params.turn === 10"> Turno Finale </span>
         <span v-else> Turno {{ $route.params.turn }} </span>
         
-        <span v-if = "$route.params.evento === true"> Ha nevicato </span>
+        <span v-if = "$route.params.events[this.$route.params.turn - 1] === true"> Ha nevicato </span>
         <span v-else> Non ha nevicato </span>
         <!-- Rimetti Index -->
         <tr v-for = "(t, index) in $route.params.teams" :key = "t">
@@ -19,8 +19,8 @@
             </label>
         </tr>
 
-        <router-link v-if = "$route.params.turn === 10 "> <button class="button"> Fine </button> </router-link>
-        <router-link v-else :to = "{name: 'Game', params: {first: first, teams : teams, risultati: $route.params.risultati, turn: turn } }"> <button class="button" @click = "nextTurn"> Prossimo Turno </button> </router-link>
+        <router-link v-if = "$route.params.turn === 10 " :to = "{name: 'Fine', params: {events: events, teams : teams, risultati: $route.params.risultati} }"> <button class="button"> Fine </button> </router-link>
+        <router-link v-else :to = "{name: 'Game', params: {events: events, teams : teams, risultati: $route.params.risultati, turn: turn } }"> <button class="button" @click = "nextTurn"> Prossimo Turno </button> </router-link>
     </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
         return{
             teams: this.$route.params.teams,
             turn: this.$route.params.turn,
-            first: this.$route.params.first,
+            events: this.$route.params.events,
         }
     },
     methods: {

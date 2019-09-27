@@ -5,6 +5,7 @@ import Header from '../components/Header.vue'
 import Selezione from '../components/Selezione.vue'
 import Game from '../components/Game.vue'
 import Results from '../components/Results.vue'
+import Fine from '../components/Fine.vue'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/results',
       name: 'Results',
       component: Results
+    },
+    {
+      path: '/fine',
+      name: 'Fine',
+      component: Fine
     }
   ]
 })

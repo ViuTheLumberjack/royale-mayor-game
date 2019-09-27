@@ -22,7 +22,7 @@
             -->
         </tr>
         
-        <router-link :to = "{name: 'Results', params: {teams : teams, risultati: risultati, turn: turn, evento: event } }"> <button @click = "save" class="button"> Fine Round </button> </router-link>
+        <router-link :to = "{name: 'Results', params: {teams : teams, risultati: risultati, turn: turn, events: events } }"> <button @click = "save" class="button"> Fine Round </button> </router-link>
 
     </div>
 </template>
@@ -43,9 +43,9 @@ export default {
             ],
             probabilita: Math.floor(Math.random() * 100),
             index: 0,
-            risultati: Array.from(Array(8), () => new Array(10)), // team x turn
-            event: false,
+            risultati: Array.from(Array(3), () => new Array(10)), // team x turn
             turn: 1,
+            events: new Array(10),
         }
         
     },
@@ -76,6 +76,8 @@ export default {
             var app = Math.floor(Math.random() * 100)
             if(app <= this.probabilita) this.event = true;
             else this.event = false;
+
+            this.events[this.turn - 1] = this.event;
             
         }
     },
@@ -85,6 +87,7 @@ export default {
         } else {
             this.turn = this.$route.params.turn;
             this.risultati = this.$route.params.risultati;
+            this.events = this.$route.params.events;
         }
     }
 }
