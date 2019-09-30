@@ -41,7 +41,7 @@
     margin: auto;
     z-index: -1;
 }
-
+/*
   .container input {
     position: absolute;
     opacity: 0;
@@ -97,7 +97,7 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-
+*/
   .button 
   {
 
