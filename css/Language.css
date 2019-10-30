@@ -1,0 +1,26 @@
+#IT
+{   
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 20%;
+    height: auto;
+}
+
+#ENG
+{
+    border-radius: 50%;
+    size: 1px;
+    position: absolute;
+    margin-left: 70%;
+    margin-top: 10%;
+    width: 20%;
+    height: auto;
+}
+
+#Testo
+{
+text-align: center;
+color: green;
+}
