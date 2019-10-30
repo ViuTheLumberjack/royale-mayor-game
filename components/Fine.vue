@@ -22,10 +22,10 @@
         </tr>
 
         <span v-if="lang==='it'">
-            Il vincitore e' {{ team }} col punteggio {{ max }}
+            Il vincitore e' {{ $route.params.teams[team] }} col punteggio {{ max }}
         </span>
         <span v-else>
-            The winner is {{ team }} with a score of {{ max }}
+            The winner is {{ $route.params.teams[team] }} with a score of {{ max }}
         </span>
 
     </div>
