@@ -12,7 +12,7 @@
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
 
-      <router-link :to = "{name:'Game', params: {lang : lang} }" ><img v-bind:src = "getImage(3)" class="iniziaIMG" alt="bottone"></router-link>
+      <router-link :to = "{name:'Game', params: {lang : lang} }" ><img v-bind:src = "getImage(3)" class="iniziaIMG" alt="button"></router-link>
     </div>
 </template>
 
@@ -33,6 +33,7 @@
     name: 'Istruzioni',
     data() {
       return{
+        lang: this.$route.params.lang,
         swiperOption: {
           pagination: {
             el: '.swiper-pagination',
@@ -41,8 +42,7 @@
           navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
-          },
-          lang: this.$route.params.lang
+          }
         }
       }
     },
@@ -61,24 +61,24 @@
           case 0: 
 
             if(this.$route.params.lang==="it") img_source = it_images.italian0;
-            else img_source = it_images.english0;
+            else img_source = eng_images.english0;
                       
             break;
 
           case 1:
 
             if(this.$route.params.lang==="it") img_source = it_images.italian1;
-            else img_source = it_images.english1;
+            else img_source = eng_images.english1;
             break;
           
           case 2:
             if(this.$route.params.lang==="it") img_source = it_images.italian2;
-            else img_source = it_images.english2;
+            else img_source = eng_images.english2;
             break;
                   
           case 3:
             if(this.$route.params.lang==="it") img_source = it_images.inizia;
-            else img_source = it_images.start;
+            else img_source = eng_images.start;
                   
         }
 
