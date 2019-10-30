@@ -20,11 +20,20 @@
         
         <!-- Rimetti Index -->
         <tr v-for = "(t, index) in $route.params.teams" :key = "t">
-            <img v-if = "t === 'big'" :src = "getImage(0)" class="image">
-                
-            <img v-else-if = "t === 'medium'" :src = "getImage(1)" class="image1">
+            <span v-if="lang=='eng'">
+            <img v-if = "t.includes('Big')" :src = "getImage(0)" class="image">
+                <!-- Inserisci -->
+            <img v-else-if = "t.includes('Medium')" :src = "getImage(1)" class="image1">
             
             <img v-else :src = "getImage(2)" class="image2">
+            </span>
+            <span v-else>
+            <img v-if = "t.includes('Grande')" :src = "getImage(0)" class="image">
+                <!-- Inserisci -->
+            <img v-else-if = "t.includes('Media')" :src = "getImage(1)" class="image1">
+            
+            <img v-else :src = "getImage(2)" class="image2">
+            </span>
             <label class="container">
                 
                 <!-- Scritte accanto alle immagini --> 
