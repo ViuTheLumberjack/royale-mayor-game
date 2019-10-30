@@ -1,10 +1,23 @@
 <template>
     <div>
-        <span v-if = "$route.params.turn === 10"> Turno Finale </span>
-        <span v-else> Turno {{ $route.params.turn }} </span>
+        <span v-if="lang=='it'">
+            <span v-if = "$route.params.turn === 10"> Turno Finale </span>
+            <span v-else> Turno {{ $route.params.turn }} </span>
+        </span>
+        <span v-else>
+            <span v-if = "$route.params.turn === 10"> Final Round </span>
+            <span v-else> Turn {{ $route.params.turn }} </span>
+        </span>
+
+        <span v-if="lang=='it'">
+            <span v-if = "$route.params.events[this.$route.params.turn - 1] === true"> Ha nevicato </span>
+            <span v-else> Non ha nevicato </span>
+        </span>
+        <span v-else>
+            <span v-if = "$route.params.events[this.$route.params.turn - 1] === true"> It Rained </span>
+            <span v-else> It didn't rain </span>
+        </span>
         
-        <span v-if = "$route.params.events[this.$route.params.turn - 1] === true"> Ha nevicato </span>
-        <span v-else> Non ha nevicato </span>
         <!-- Rimetti Index -->
         <tr v-for = "(t, index) in $route.params.teams" :key = "t">
             <img v-if = "t === 'big'" :src = "getImage(0)" class="image">
@@ -13,14 +26,22 @@
             
             <img v-else :src = "getImage(2)" class="image2">
             <label class="container">
-                {{ t }}  
-                <!-- finisci calculate --> 
-            <span> {{  $route.params.risultati[index][turn - 1]  }}  </span>
+                
+                <!-- Scritte accanto alle immagini --> 
+            <span v-if="lang=='it'">
+                <span v-if="$route.params.risultati[index][turn - 1] === true"> Assicurato </span>
+                <span v-else> Insured </span>
+            </span>
+            <span v-else>
+                <span v-if="$route.params.risultati[index][turn - 1] === true"> Non Assicurato </span>
+                <span v-else> Not Insured </span>
+            </span>
+            
             </label>
         </tr>
 
-        <router-link v-if = "$route.params.turn === 10 " :to = "{name: 'Fine', params: {events: events, teams : teams, risultati: $route.params.risultati} }"> <button class="button"> Fine </button> </router-link>
-        <router-link v-else :to = "{name: 'Game', params: {events: events, teams : teams, risultati: $route.params.risultati, turn: turn } }"> <button class="button" @click = "nextTurn"> Prossimo Turno </button> </router-link>
+        <router-link v-if = "$route.params.turn === 10 " :to = "{name: 'Fine', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati} }"> <button class="button"> Fine </button> </router-link>
+        <router-link v-else :to = "{name: 'Game', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati, turn: turn } }"> <button class="button" @click = "nextTurn"> Prossimo Turno </button> </router-link>
     </div>
 </template>
 
@@ -31,6 +52,7 @@ export default {
     name: "Results",
     data(){
         return{
+            lang: this.$route.params.lang,
             teams: this.$route.params.teams,
             turn: this.$route.params.turn,
             events: this.$route.params.events,
@@ -64,6 +86,11 @@ export default {
 
             return app;
         }
+    },
+    created: function(){
+
+        this.lang = this.$route.params.lang;
+
     }
 
 }

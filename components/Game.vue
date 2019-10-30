@@ -1,9 +1,14 @@
 <template>
     <div>
         <div class="testo">
-            <h1 class="turno"> Turno {{ turn }} </h1>
-            <h1 class="probabilita">Probabilita' precipitazioni: {{ probabilita }} % </h1>
-            <h1 class="assicuri"> cliccare la casella della rispettiva citta' per assicurarsi </h1>
+            <h1 v-if="lang === 'it'" class="turno"> Turno {{ turn }} </h1>
+            <h1 v-if="lang === 'eng'" class="turno"> Turn {{ turn }} </h1>
+
+            <h1 v-if="lang === 'it'" class="probabilita">Probabilita' precipitazioni: {{ probabilita }} % </h1>
+            <h1 v-if="lang === 'eng'" class="probabilita">Rainfall Probability: {{ probabilita }} % </h1>
+            
+            <h1 v-if="lang === 'it'" class="assicuri"> cliccare la casella della rispettiva citta' per assicurarsi </h1>
+            <h1 v-if="lang === 'eng'" class="assicuri"> click on the respective city to insure against rainfall </h1>
         </div>
         <tr v-for = "(t, index) in teams" :key = "t">
             <img v-if = "t === 'big'" :src = "getImage(0)" class="image">
@@ -12,7 +17,8 @@
             
             <img v-else :src = "getImage(2)" class="image2">
             <label class="container">
-                {{ t }}
+                <span v-if="lang === 'it'" class="cityName"> {{ t }} citta' </span>
+                <span v-if="lang === 'eng'" class="cityName">  {{ t }} city </span>
                 <input type = "checkbox" :id = "index"> 
                 <span class="checkmark"></span>
             </label>
@@ -22,7 +28,7 @@
             -->
         </tr>
         
-        <router-link :to = "{name: 'Results', params: {teams : teams, risultati: risultati, turn: turn, events: events } }"> <button @click = "save" class="button"> Fine Round </button> </router-link>
+        <router-link :to = "{name: 'Results', params: {lang : lang, teams : teams, risultati: risultati, turn: turn, events: events } }"> <button @click = "save" class="button"> Fine Round </button> </router-link>
 
     </div>
 </template>
@@ -46,6 +52,7 @@ export default {
             risultati: Array.from(Array(3), () => new Array(10)), // team x turn
             turn: 1,
             events: new Array(10),
+            lang: "it",
         }
         
     },
@@ -82,13 +89,17 @@ export default {
         }
     },
     created: function(){
+        
         if(this.$route.params.turn === undefined){
             this.turn = 1;
+            this.lang = this.$route.params.lang;
         } else {
             this.turn = this.$route.params.turn;
             this.risultati = this.$route.params.risultati;
             this.events = this.$route.params.events;
+            this.lang = this.$route.params.lang;
         }
+        
     }
 }
 </script>
