@@ -11,13 +11,22 @@
             <h1 v-if="lang === 'eng'" class="assicuri"> click on the respective city to insure against rainfall </h1>
         </div>
         <tr v-for = "(t, index) in teams" :key = "t">
-            <img v-if = "t === 'big'" :src = "getImage(0)" class="image">
+            <span v-if="lang=='eng'">
+            <img v-if = "t.includes('Big')" :src = "getImage(0)" class="image">
                 <!-- Inserisci -->
-            <img v-else-if = "t === 'medium'" :src = "getImage(1)" class="image1">
+            <img v-else-if = "t.includes('Medium')" :src = "getImage(1)" class="image1">
             
             <img v-else :src = "getImage(2)" class="image2">
+            </span>
+            <span v-else>
+            <img v-if = "t.includes('Grande')" :src = "getImage(0)" class="image">
+                <!-- Inserisci -->
+            <img v-else-if = "t.includes('Media')" :src = "getImage(1)" class="image1">
+            
+            <img v-else :src = "getImage(2)" class="image2">
+            </span>
             <label class="container">
-
+                <span class="cityName"> {{ t }} </span>
                 <input type = "checkbox" :id = "index"> 
                 <span class="checkmark"></span>
             </label>
@@ -42,9 +51,9 @@ export default {
     data(){
         return{
             teams: [
-                "big",
-                "medium",
-                "small"
+                "Big",
+                "Medium",
+                "Small"
             ],
             probabilita: Math.floor(Math.random() * 100),
             index: 0,
@@ -97,6 +106,19 @@ export default {
             this.risultati = this.$route.params.risultati;
             this.events = this.$route.params.events;
             this.lang = this.$route.params.lang;
+        }
+        if(this.lang==="it"){
+            this.teams = [
+                "Citta' Grande",
+                "Citta' Media",
+                "Citta' Piccola"
+            ]
+        } else {
+            this.teams= [
+                "Big city",
+                "Medium city",
+                "Small city"
+            ]
         }
         
     }
