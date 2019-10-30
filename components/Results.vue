@@ -1,21 +1,21 @@
 <template>
     <div>
         <span v-if="lang=='it'">
-            <span v-if = "$route.params.turn === 10"> Turno Finale </span>
-            <span v-else> Turno {{ $route.params.turn }} </span>
+            <span class = "titolo" v-if = "$route.params.turn === 10"> Turno Finale </span>
+            <span class = "titolo" v-else> Turno {{ $route.params.turn }} </span>
         </span>
         <span v-else>
-            <span v-if = "$route.params.turn === 10"> Final Round </span>
-            <span v-else> Turn {{ $route.params.turn }} </span>
+            <span class = "titolo" v-if = "$route.params.turn === 10"> Final Round </span>
+            <span class = "titolo" v-else> Turn {{ $route.params.turn }} </span>
         </span>
 
         <span v-if="lang=='it'">
-            <span v-if = "$route.params.events[this.$route.params.turn - 1] === true"> Ha nevicato </span>
-            <span v-else> Non ha nevicato </span>
+            <span class = "esito"  v-if = "$route.params.events[this.$route.params.turn - 1] === true"> Ha nevicato </span>
+            <span class = "esito" v-else> Non ha nevicato </span>
         </span>
         <span v-else>
-            <span v-if = "$route.params.events[this.$route.params.turn - 1] === true"> It Rained </span>
-            <span v-else> It didn't rain </span>
+            <span class = "esito" v-if = "$route.params.events[this.$route.params.turn - 1] === true"> It Rained </span>
+            <span class = "esito" v-else> It didn't rain </span>
         </span>
         
         <!-- Rimetti Index -->
@@ -29,12 +29,12 @@
                 
                 <!-- Scritte accanto alle immagini --> 
             <span v-if="lang=='it'">
-                <span v-if="$route.params.risultati[index][turn - 1] === true"> Assicurato </span>
-                <span v-else> Non Assicurato </span>
+                <span class = "scelta" v-if="$route.params.risultati[index][turn - 1] === true"> Assicurato </span>
+                <span class = "scelta" v-else> Non Assicurato </span>
             </span>
             <span v-else>
-                <span v-if="$route.params.risultati[index][turn - 1] === true"> Insured </span>
-                <span v-else> Not Insured </span>
+                <span class = "scelta" v-if="$route.params.risultati[index][turn - 1] === true"> Insured </span>
+                <span class = "scelta" v-else> Not Insured </span>
             </span>
             
             </label>
@@ -42,11 +42,11 @@
 
         <span v-if="lang=='it'">
             <router-link v-if = "$route.params.turn === 10 " :to = "{name: 'Fine', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati} }"> <button class="button"> Fine </button> </router-link>
-            <router-link v-else :to = "{name: 'Game', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati, turn: turn } }"> <button class="button" @click = "nextTurn"> Prossimo Turno </button> </router-link>
+            <router-link v-else :to = "{name: 'Game', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati, turn: turn } }"> <button class="button" @click = "nextTurn"> Prossimo </button> </router-link>
         </span>
         <span v-else>
              <router-link v-if = "$route.params.turn === 10 " :to = "{name: 'Fine', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati} }"> <button class="button"> Finish </button> </router-link>
-            <router-link v-else :to = "{name: 'Game', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati, turn: turn } }"> <button class="button" @click = "nextTurn"> Next Round </button> </router-link>
+            <router-link v-else :to = "{name: 'Game', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati, turn: turn } }"> <button class="button" @click = "nextTurn"> Next </button> </router-link>
         </span>
     </div>
 </template>
@@ -102,6 +102,6 @@ export default {
 }
 </script>
 
-<style>
+<style src="../css/Results.css">
 
 </style>

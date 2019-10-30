@@ -1,5 +1,6 @@
 <template>
     <div>
+    <table id = "fine">
         <tr>
             <td v-if="lang==='it'"> Giorno </td>
             <td v-else> Day </td>
@@ -21,13 +22,13 @@
             <td v-for = "(index, t) in $route.params.teams" :key = "index"> {{ csi(t) }} </td>
         </tr>
 
-        <span v-if="lang==='it'">
+        <span class = "Vincitore" v-if="lang==='it'">
             Il vincitore e' {{ $route.params.teams[team] }} col punteggio {{ max }}
         </span>
-        <span v-else>
+        <span class = "Vincitore" v-else>
             The winner is {{ $route.params.teams[team] }} with a score of {{ max }}
         </span>
-
+    </table>
     </div>
 </template>
 
@@ -79,6 +80,5 @@ export default {
 }
 </script>
 
-<style>
-
+<style src="../css/Fine.css">
 </style>

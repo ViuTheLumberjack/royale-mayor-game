@@ -17,8 +17,7 @@
             
             <img v-else :src = "getImage(2)" class="image2">
             <label class="container">
-                <span v-if="lang === 'it'" class="cityName"> {{ t }} citta' </span>
-                <span v-if="lang === 'eng'" class="cityName">  {{ t }} city </span>
+
                 <input type = "checkbox" :id = "index"> 
                 <span class="checkmark"></span>
             </label>
@@ -28,7 +27,7 @@
             -->
         </tr>
         
-        <router-link :to = "{name: 'Results', params: {lang : lang, teams : teams, risultati: risultati, turn: turn, events: events } }"> <button @click = "save" class="button"> Fine Round </button> </router-link>
+        <router-link :to = "{name: 'Results', params: {lang : lang, teams : teams, risultati: risultati, turn: turn, events: events } }"> <button @click = "save" class="button"> >> </button> </router-link>
 
     </div>
 </template>

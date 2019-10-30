@@ -1,0 +1,33 @@
+*.titolo
+  {
+    text-align: left;
+    text-transform: uppercase;
+    color: #4CAF50;
+    margin-left: 35%;
+    font-size: xx-large;
+  }
+
+  .esito
+  {
+    font-size: xx-large;
+    text-align: left;
+    text-transform: uppercase;
+    color: #4CAF50;
+    margin-left: 5%;
+  }
+  .scelta
+  {
+    text-align: left;
+    text-transform: uppercase;
+    color: #4CAF50;
+    font-size: large;
+  }
+
+  .test
+  {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+    margin-left: 35%;
+    font-size: large;
+  }

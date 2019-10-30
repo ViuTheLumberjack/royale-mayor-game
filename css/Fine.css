@@ -1,0 +1,40 @@
+#fine
+{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#fine td{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#fine th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#fine tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+ #fine tr:hover{
+     background-color: #ddd;
+ }
+
+ #fine th
+ {
+     padding-top: 12px;
+     padding-bottom: 12px;
+     text-align: left;
+     background-color: #4CAF50;
+     color: white;
+ }
+
+ .Vincitore
+ {
+     text-align: center;
+     font-size: xx-large;
+     color: #4CAF50;
+ }
