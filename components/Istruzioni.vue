@@ -12,7 +12,7 @@
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
 
-      <router-link to = "/Game" ><img v-bind:src = "getImage(3)" class="iniziaIMG" alt="bottone"></router-link>
+      <router-link :to = "{name:'Game', params: {lang : lang} }" ><img v-bind:src = "getImage(3)" class="iniziaIMG" alt="bottone"></router-link>
     </div>
 </template>
 
@@ -20,6 +20,7 @@
   // import { image_info } from '../js/constants'
   // import Header from './Header'
   import { it_images } from "../assets/istruzioni/index.js"
+  import { eng_images } from "../assets/istruzioni/index.js"
   import 'swiper/dist/css/swiper.css'
   import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
@@ -40,7 +41,8 @@
           navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
-          }
+          },
+          lang: this.$route.params.lang
         }
       }
     },
@@ -54,27 +56,29 @@
       getImage(number){
         var img_source;
 
+        
         switch (number) {
           case 0: 
-          
-            img_source = it_images.italian0;
+
+            if(this.$route.params.lang==="it") img_source = it_images.italian0;
+            else img_source = it_images.english0;
                       
             break;
 
           case 1:
 
-            img_source = it_images.italian1;
-            /*if (currentImage === image_info.ITALIAN_IMAGE)
-            button_image = ;
-            else button_image = ;*/
+            if(this.$route.params.lang==="it") img_source = it_images.italian1;
+            else img_source = it_images.english1;
             break;
           
-            case 2:
-              img_source = it_images.italian2;
-              break;
+          case 2:
+            if(this.$route.params.lang==="it") img_source = it_images.italian2;
+            else img_source = it_images.english2;
+            break;
                   
-            case 3:
-              img_source = it_images.inizia;
+          case 3:
+            if(this.$route.params.lang==="it") img_source = it_images.inizia;
+            else img_source = it_images.start;
                   
         }
 

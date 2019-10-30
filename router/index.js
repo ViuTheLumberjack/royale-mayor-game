@@ -6,6 +6,7 @@ import Selezione from '../components/Selezione.vue'
 import Game from '../components/Game.vue'
 import Results from '../components/Results.vue'
 import Fine from '../components/Fine.vue'
+import Language from '../components/Language.vue'
 
 Vue.use(Router)
 
@@ -13,8 +14,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Istruzioni',
-      component: Istruzioni
+      name: 'Language',
+      component: Language
     },
     {
       path: '/header',
@@ -40,6 +41,11 @@ export default new Router({
       path: '/fine',
       name: 'Fine',
       component: Fine
+    },
+    {
+      path: '/istruzioni',
+      name: 'Istruzioni',
+      component: Istruzioni
     }
   ]
 })
