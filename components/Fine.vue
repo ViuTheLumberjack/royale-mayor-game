@@ -74,7 +74,7 @@ export default {
         }
     },
     created: function(){
-        lang = this.$route.params.lang;
+        this.lang = this.$route.params.lang;
     }
 }
 </script>
