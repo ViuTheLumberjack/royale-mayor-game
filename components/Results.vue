@@ -30,18 +30,24 @@
                 <!-- Scritte accanto alle immagini --> 
             <span v-if="lang=='it'">
                 <span v-if="$route.params.risultati[index][turn - 1] === true"> Assicurato </span>
-                <span v-else> Insured </span>
+                <span v-else> Non Assicurato </span>
             </span>
             <span v-else>
-                <span v-if="$route.params.risultati[index][turn - 1] === true"> Non Assicurato </span>
+                <span v-if="$route.params.risultati[index][turn - 1] === true"> Insured </span>
                 <span v-else> Not Insured </span>
             </span>
             
             </label>
         </tr>
 
-        <router-link v-if = "$route.params.turn === 10 " :to = "{name: 'Fine', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati} }"> <button class="button"> Fine </button> </router-link>
-        <router-link v-else :to = "{name: 'Game', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati, turn: turn } }"> <button class="button" @click = "nextTurn"> Prossimo Turno </button> </router-link>
+        <span v-if="lang=='it'">
+            <router-link v-if = "$route.params.turn === 10 " :to = "{name: 'Fine', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati} }"> <button class="button"> Fine </button> </router-link>
+            <router-link v-else :to = "{name: 'Game', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati, turn: turn } }"> <button class="button" @click = "nextTurn"> Prossimo Turno </button> </router-link>
+        </span>
+        <span v-else>
+             <router-link v-if = "$route.params.turn === 10 " :to = "{name: 'Fine', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati} }"> <button class="button"> Finish </button> </router-link>
+            <router-link v-else :to = "{name: 'Game', params: {lang : lang, events: events, teams : teams, risultati: $route.params.risultati, turn: turn } }"> <button class="button" @click = "nextTurn"> Next Round </button> </router-link>
+        </span>
     </div>
 </template>
 

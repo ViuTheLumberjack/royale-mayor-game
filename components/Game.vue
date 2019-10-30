@@ -2,7 +2,7 @@
     <div>
         <div class="testo">
             <h1 v-if="lang === 'it'" class="turno"> Turno {{ turn }} </h1>
-            <h1 v-if="lang === 'eng'" class="turno"> Turn {{ turn }} </h1>
+            <h1 v-if="lang === 'eng'" class="turno"> Round {{ turn }} </h1>
 
             <h1 v-if="lang === 'it'" class="probabilita">Probabilita' precipitazioni: {{ probabilita }} % </h1>
             <h1 v-if="lang === 'eng'" class="probabilita">Rainfall Probability: {{ probabilita }} % </h1>
